@@ -2,6 +2,8 @@ site_name: Candlekeep summaries
 docs_dir: docs
 site_author: lukas.rynt
 
+site_url: https://lukasrynt.github.io/DnD-Candlekeep-Summaries/
+
 theme:
   name: material
   language: cs
