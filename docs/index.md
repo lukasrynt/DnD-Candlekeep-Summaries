@@ -1,5 +1,5 @@
 # Dimensions of Candlekeep
 
-This project contains sessions summaries and some basics links to characters and locations encountered.
+Na téhle stránce najdete summaries naších jednotlivých sessions, které budu postupně přidávat.
 
 - [[12.12.2025]]
