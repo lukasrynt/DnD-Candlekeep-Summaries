@@ -1,23 +1,63 @@
 site_name: Candlekeep summaries
 docs_dir: docs
+site_author: lukas.rynt
+
 theme:
   name: material
+  language: cs
+  include_search_page: true
+  features:
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+  font:
+    text: Inter
+    code: Source Code Pro
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
 plugins:
   - search
+  - callouts
   - obsidian-interactive-graph
-  - ezlinks:
-      wikilinks: true
+  - obsidian-support
+  - obsidian-bridge
+  - glightbox
+
 markdown_extensions:
   - admonition
+  - attr_list
+  - codehilite
+  - md_in_html
+  - def_list
+  - sane_lists
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight:
-      auto_title: true
+  - pymdownx.magiclink
+  - toc:
+      permalink: true
 
 extra_javascript:
   - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
   - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
+  - assets/javascripts/obsidian_tags.js
   - assets/javascripts/interactive_graph.js
 
 extra_css:
+  - assets/stylesheets/obsidian_tags.css
   - assets/stylesheets/interactive_graph.css
