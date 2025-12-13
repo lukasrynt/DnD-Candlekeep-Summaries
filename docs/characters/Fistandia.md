@@ -1,0 +1,6 @@
+---
+aliases:
+  - Fistandie
+tags:
+  - postava
+---

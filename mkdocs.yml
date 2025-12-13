@@ -7,7 +7,6 @@ site_url: https://lukasrynt.github.io/DnD-Candlekeep-Summaries/
 theme:
   name: material
   language: cs
-  custom_dir: overrides
   include_search_page: true
   features:
     - content.action.view
@@ -25,6 +24,11 @@ theme:
   font:
     text: Inter
     code: Source Code Pro
+  icon:
+    tag:
+      npc:      fontawesome/solid/user
+      location: fontawesome/solid/map-marker-alt
+      race:     fontawesome/solid/paw
   palette:
     - scheme: default
       toggle:
@@ -36,10 +40,17 @@ theme:
         name: Switch to light mode
 plugins:
   - search
+  - tags
   - callouts
   - obsidian-interactive-graph
   - obsidian-support
   - obsidian-bridge
+
+extra:
+  tags:
+    postava: npc
+    lokace: location
+    rasa: race
 
 markdown_extensions:
   - admonition
@@ -57,10 +68,7 @@ markdown_extensions:
 extra_javascript:
   - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
   - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
-  - assets/javascripts/obsidian_tags.js
   - assets/javascripts/interactive_graph.js
 
 extra_css:
-  - assets/stylesheets/obsidian_tags.css
   - assets/stylesheets/interactive_graph.css
-  - assets/stylesheets/wiki_meta.css

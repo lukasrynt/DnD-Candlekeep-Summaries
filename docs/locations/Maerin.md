@@ -1,4 +1,6 @@
 ---
 aliases:
   - Maerinu
+tags:
+  - lokace
 ---
