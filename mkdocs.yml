@@ -7,6 +7,7 @@ site_url: https://lukasrynt.github.io/DnD-Candlekeep-Summaries/
 theme:
   name: material
   language: cs
+  custom_dir: overrides
   include_search_page: true
   features:
     - content.action.view
@@ -39,7 +40,6 @@ plugins:
   - obsidian-interactive-graph
   - obsidian-support
   - obsidian-bridge
-  - glightbox
 
 markdown_extensions:
   - admonition
@@ -63,3 +63,4 @@ extra_javascript:
 extra_css:
   - assets/stylesheets/obsidian_tags.css
   - assets/stylesheets/interactive_graph.css
+  - assets/stylesheets/wiki_meta.css
