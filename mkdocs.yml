@@ -2,3 +2,22 @@ site_name: Candlekeep summaries
 docs_dir: docs
 theme:
   name: material
+plugins:
+  - search
+  - obsidian-interactive-graph
+  - ezlinks:
+      wikilinks: true
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      auto_title: true
+
+extra_javascript:
+  - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
+  - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
+  - assets/javascripts/interactive_graph.js
+
+extra_css:
+  - assets/stylesheets/interactive_graph.css
