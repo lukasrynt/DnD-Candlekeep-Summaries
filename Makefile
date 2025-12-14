@@ -1,0 +1,17 @@
+CONVERT = magick
+IMAGES_DIR = "./docs/materiály"
+IMAGES = $(shell find $(IMAGES_DIR) -maxdepth 1 -type f \
+    \( -iname "*.jpg" -o \
+       -iname "*.jpeg" -o \
+       -iname "*.png" -o \
+       -iname "*.gif" -o \
+       -iname "*.bmp" -o \
+       -iname "*.tiff" \) \
+    -not -iname "*.webp")
+
+.PHONY: convert
+convert: $(IMAGES:=.webp)
+
+%.webp: %
+	$(CONVERT) "$<" -quality 80 "$@"
+	rm "$<"
