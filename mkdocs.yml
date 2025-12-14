@@ -5,6 +5,7 @@ site_author: lukas.rynt
 site_url: https://lukasrynt.github.io/DnD-Candlekeep-Summaries/
 
 repo_url: https://github.com/lukasrynt/DnD-Candlekeep-Summaries
+edit_uri: edit/main/docs/
 
 theme:
   name: material
@@ -20,6 +21,9 @@ theme:
     - navigation.indexes
     - navigation.sections
     - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.footer
     - search.highlight
     - search.share
     - search.suggest
@@ -66,8 +70,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.magiclink
-  - toc:
-      permalink: true
 
 extra_javascript:
   - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
