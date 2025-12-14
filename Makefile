@@ -1,6 +1,5 @@
 CONVERT = magick
-IMAGES_DIR = "./docs/materiály"
-IMAGES = $(shell find $(IMAGES_DIR) -maxdepth 1 -type f \
+IMAGES = $(shell find . -maxdepth 1 -type f \
     \( -iname "*.jpg" -o \
        -iname "*.jpeg" -o \
        -iname "*.png" -o \

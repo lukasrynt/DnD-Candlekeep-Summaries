@@ -35,6 +35,7 @@ theme:
       npc:      fontawesome/solid/user
       location: fontawesome/solid/map-marker-alt
       artifact: fontawesome/solid/ring
+      book:     fontawesome/solid/book
       race:     fontawesome/solid/paw
   palette:
     - scheme: default
@@ -58,6 +59,7 @@ extra:
     postava: npc
     lokace: location
     artefakt: artifact
+    kniha: book
     rasa: race
 
 markdown_extensions:
