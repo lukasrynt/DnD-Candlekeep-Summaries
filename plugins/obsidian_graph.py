@@ -36,15 +36,13 @@ class ObsidianInteractiveGraphPlugin(BasePlugin):
 
     def page_if_exists(self, page: str) -> str:
         page = self.get_path(self.site_path, page)
-        for k,_ in self.nodes.items():
-            if k == page:
-                return page
-        return None
+        return page if page in self.nodes else None
 
     def collect_pages(self, nav: MkDocsNav, config: MkDocsConfig):
         for page in nav.pages:
             page.read_source(config=config)
-            self.nodes[self.get_page_path(page)] = {
+            path = self.get_page_path(page)
+            self.nodes[path] = {
                 "id": self.id,
                 "title": page.title,
                 "url": page.abs_url,
@@ -74,13 +72,7 @@ class ObsidianInteractiveGraphPlugin(BasePlugin):
                 wikilink = self.page_if_exists(wikilink) or self.page_if_exists(self.get_path(page_path, wikilink)) or wikilink
 
                 # find something that matches: shortest path depth
-                abslen = None
-                for k,_ in self.nodes.items():
-                    for _ in re.finditer(re.compile(r"(.*" + wikilink + r")"), k):
-                        curlen = k.count('/')
-                        if abslen == None or curlen < abslen:
-                            target_page_path = k
-                            abslen = curlen
+                target_page_path = self.find_best_target(wikilink)
 
             if target_page_path == "":
                 self.logger.warning(page.file.src_uri + ": no target page found for wikilink: " + wikilink)
@@ -96,8 +88,22 @@ class ObsidianInteractiveGraphPlugin(BasePlugin):
             self.nodes[page_path]["symbolSize"] = self.nodes[page_path].get("symbolSize", 1) + 1
             self.nodes[target_page_path]["symbolSize"] = self.nodes[target_page_path].get("symbolSize", 1) + 1
 
+    def find_best_target(self, wikilink: str) -> str:
+        # 1. Exact filename match (page.md → page)
+        for path in self.nodes:
+            if path.endswith(f'/{wikilink}') or path.rstrip('/').endswith(wikilink):
+                return path
+
+        # 2. Exact path match
+        if wikilink in self.nodes:
+            return wikilink
+
+        # 3. Parent directory (locations/Candlekeep → Candlekeep.md)
+        candidates = [p for p in self.nodes if wikilink in p.split('/')]
+        return candidates[0] if candidates else None
+
     def create_graph_json(self, config: MkDocsConfig):
-        for i, (k,v) in enumerate(self.nodes.items()):
+        for i, (k, v) in enumerate(self.nodes.items()):
             node = {
                 "id": str(i),
                 "name": v["title"],
