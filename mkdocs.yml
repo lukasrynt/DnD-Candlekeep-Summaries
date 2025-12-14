@@ -42,7 +42,7 @@ plugins:
   - search
   - tags
   - callouts
-  - obsidian-interactive-graph
+  - obsidian-graph
   - obsidian-support
   - obsidian-bridge
 

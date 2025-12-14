@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+candlekeep_summaries.egg-info/PKG-INFO
+candlekeep_summaries.egg-info/SOURCES.txt
+candlekeep_summaries.egg-info/dependency_links.txt
+candlekeep_summaries.egg-info/entry_points.txt
+candlekeep_summaries.egg-info/requires.txt
+candlekeep_summaries.egg-info/top_level.txt
+plugins/__init__.py
+plugins/obsidian_graph.py
