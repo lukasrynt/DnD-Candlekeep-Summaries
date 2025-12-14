@@ -28,6 +28,7 @@ theme:
     tag:
       npc:      fontawesome/solid/user
       location: fontawesome/solid/map-marker-alt
+      artifact: fontawesome/solid/ring
       race:     fontawesome/solid/paw
   palette:
     - scheme: default
@@ -50,6 +51,7 @@ extra:
   tags:
     postava: npc
     lokace: location
+    artefakt: artifact
     rasa: race
 
 markdown_extensions:
