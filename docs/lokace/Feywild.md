@@ -1,0 +1,6 @@
+---
+tags:
+  - lokace
+aliases:
+  - Feywildu
+---
