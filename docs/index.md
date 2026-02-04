@@ -7,6 +7,7 @@ Na téhle stránce najdete summaries naších jednotlivých sessions, které bud
 - [[5. Session]] (12.12.2025)
 - [[6. Session]] (30.12.2025)
 - [[7. Session]] (20.1.2026)
+- [[8. Session]] (2.2.2026)
 
 ---
 
